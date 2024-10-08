@@ -1,0 +1,49 @@
+#resolucao da primeira questao
+import math
+
+
+n = 6      
+k = 3      
+p = 0.25   
+
+
+def binomial_coeff(n, k):
+    return math.factorial(n) // (math.factorial(k) * math.factorial(n - k))
+
+probabilidade = binomial_coeff(n, k) * (p ** k) * ((1 - p) ** (n - k))
+print('Resultado da primeira questao')
+print(f'A probabilidade de ter exatamente {k} filhos loiros é: {probabilidade:.4f}')
+
+#resolucao da segunda questao
+lmbda = 8   
+k = 4        
+
+
+probabilidade = (lmbda ** k) * math.exp(-lmbda) / math.factorial(k)
+print('------------------------------------')
+print('Resultado da segunda questao')
+print(f'A probabilidade de ocorrerem exatamente {k} falências é: {probabilidade:.4f}')
+
+#resolucao da terceira questao
+
+from scipy import stats
+
+# Definindo os parâmetros da distribuição normal
+media = 5
+desvio_padrao = 1
+
+# Função para calcular a probabilidade acumulada da distribuição normal
+def probabilidade_acumulada(x):
+    return stats.norm.cdf(x, loc=media, scale=desvio_padrao)
+print('------------------------------------')
+print('Resultado da terceira questao')
+prob_a = probabilidade_acumulada(2.5)
+print("A probabilidade de ser inferior a 2,5 horas é:", prob_a)
+
+# Item B: Probabilidade de estar entre 2,5 e 7,5 horas
+prob_b = probabilidade_acumulada(7.5) - probabilidade_acumulada(2.5)
+print("A probabilidade de estar entre 2,5 e 7,5 horas é:", prob_b)
+
+# Item C: Probabilidade de ser superior a 7,5 horas
+prob_c = 1 - probabilidade_acumulada(7.5)
+print("A probabilidade de ser superior a 7,5 horas é:", prob_c)
