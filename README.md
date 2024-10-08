@@ -1,1 +1,1 @@
-Trabalho criado para a materia data science, utilizando datasets do professor Márcio, com o objetivo de trabalhar a biblioteca panda de python
+Este repositório contém o trabalho desenvolvido para a disciplina de Data Science, utilizando datasets fornecidos pelo professor Márcio. O objetivo principal é aplicar a biblioteca pandas em Python para análise e manipulação de dados, explorando técnicas fundamentais de ciência de dados.
